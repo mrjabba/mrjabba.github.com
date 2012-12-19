@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: git | Kevin Hutson]]></title>
+  <link href="http://mrjabba.github.com/blog/categories/git/atom.xml" rel="self"/>
+  <link href="http://mrjabba.github.com/"/>
+  <updated>2012-12-19T17:35:37-06:00</updated>
+  <id>http://mrjabba.github.com/</id>
+  <author>
+    <name><![CDATA[Kevin Hutson]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Dirty Git Directories]]></title>
+    <link href="http://mrjabba.github.com/blog/2011/08/07/dirty-git-directories/"/>
+    <updated>2011-08-07T03:52:00-05:00</updated>
+    <id>http://mrjabba.github.com/blog/2011/08/07/dirty-git-directories</id>
+    <content type="html"><![CDATA[<p>At my work, I still live in the world of Subversion. Nevertheless, I am able to use git by taking advantage of "git svn" which clones existing SVN repo's locally. It works great.</p>
+
+<p>Unfortunately, my setup is not optimal. I have a bunch of git repo's, one for each SVN project. My future plans involve cloning at a higher level so I can have few git repo's. Until I fix that, I find it difficult to determine which repo's are "dirty".</p>
+
+<p>Fortunately, I found Matthew McCullough's <a href="https://github.com/matthewmccullough/scripts/blob/master/finddirtygit">great script</a> solves this problem for me. For my setup, that just meant saving this script to the root of my project where all my git repo's reside. Then make the script executable. Voila!</p>
+
+<script src="https://gist.github.com/1109954.js?file=finddirtygit.sh"></script>
+
+
+
+]]></content>
+  </entry>
+  
+</feed>

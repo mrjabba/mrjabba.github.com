@@ -1,16 +1,167 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[My Octopress Blog]]></title>
+  <title><![CDATA[Kevin Hutson]]></title>
   <link href="http://mrjabba.github.com/atom.xml" rel="self"/>
   <link href="http://mrjabba.github.com/"/>
-  <updated>2012-12-15T19:10:46-06:00</updated>
+  <updated>2012-12-19T17:35:37-06:00</updated>
   <id>http://mrjabba.github.com/</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
+    <name><![CDATA[Kevin Hutson]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[He returns]]></title>
+    <link href="http://mrjabba.github.com/blog/2012/12/19/he-returns/"/>
+    <updated>2012-12-19T17:27:00-06:00</updated>
+    <id>http://mrjabba.github.com/blog/2012/12/19/he-returns</id>
+    <content type="html"><![CDATA[<p>I finally updated Octopress on my new laptop. More to come&#8230;</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[ATI and fglrx support in Gnome Shell and Ubuntu]]></title>
+    <link href="http://mrjabba.github.com/blog/2011/12/12/ati/"/>
+    <updated>2011-12-12T22:13:00-06:00</updated>
+    <id>http://mrjabba.github.com/blog/2011/12/12/ati</id>
+    <content type="html"><![CDATA[<p>I finally made the big switch to ArchLinux for my laptop. This decision came from great frustration with Ubuntu&#8217;s last upgrade and specifically, Unity. Arch is perfect for someone like me, someone ready to take the training wheels off of Linux. I&#8217;ve been using Ubuntu since around 2005 when it was still a wee baby.</p>
+
+<p>My workstation at work still has Ubuntu on it. And, worse, it has an ATI graphics card. I was so unhappy with Unity that I decided to install gnome shell and use it as my default shell. Gnome Shell was new to me, but I&#8217;ve been learning its features and feel comfortable with it now. However, I&#8217;d been suffering with the top bar displaying a graphics glitch, as well as some funky icon rendering. It corrupted the font display. So I was unable to read the calendar or the words on any applets in the top bar.</p>
+
+<p>After doing some research, I <a href="http://ubuntuforums.org/showthread.php?t=1859626">found</a> the likely culprit was fglrx which is the proprietary ATI graphics driver. Figures. Apparently it didn&#8217;t work with Oneiric Ocelot (11.10). The solution was to <a href="https://wiki.ubuntu.com/X/Troubleshooting/FglrxInteferesWithRadeonDriver#Problem:__Need_to_fully_remove_-fglrx_and_reinstall_-ati_from_scratch">remove fglrx completely then install the ATI driver</a>. Seems easy enough.</p>
+
+<p>I did so and rebooted. All of the sudden, I couldn&#8217;t get a login screen to even display. Nothing. Uh-oh. I walked over to a colleage&#8217;s desk and verified through ssh that I could login. Phew.</p>
+
+<p>Later, I found that what had happened was that it was actually working fine. But the removing fglrx doesn&#8217;t do anything to the xorg.conf file I had sitting in /etc/X11. That file was instructing the box to load fglrx as a module and crashing. I discovered my folly through a little lucky browsing. I found an Ubuntu wiki article on the Radeon driver (my card is an ATI Radeon). It states:</p>
+
+<p><em>Recommended configuration for X.org. No configuration is necessary for ATI driver in the modern versions of Ubuntu. You can safely take away your xorg.conf and your computer will run fine.</em>
+<a href="https://help.ubuntu.com/community/RadeonDriver," title="RadeonDriver">RadeonDriver</a></p>
+
+<p>Once I renamed/removed xorg.conf and rebooted, I was back in business. And, everything rendered fine now. I was able to use the built-in Gnome display control panel configure my second monitor. Good times.</p>
+
+<p>Today&#8217;s lesson: ATI = bad, Unity = bad, RTFM = required.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Rubus Primus]]></title>
+    <link href="http://mrjabba.github.com/blog/2011/09/24/rubus-primus/"/>
+    <updated>2011-09-24T14:46:00-05:00</updated>
+    <id>http://mrjabba.github.com/blog/2011/09/24/rubus-primus</id>
+    <content type="html"><![CDATA[<p>A new cider is born! After 12 days in the fermenter, I transferred it to the carboy for clarification. I should be able to bottle this next weekend at the earliest. I&#8217;ve brewed cider 2 or 3 times in the past. This is the first time I haven&#8217;t used a kit. This recipe is anything but complex. The expectation is it be less dry than other homebrewed ciders. Instead of champagne yeast, I used an ale yeast. Since I tossed in some raspberry flavoring, we should soon be enjoying something resembling a raspberry flavored Strongbow.</p>
+
+<p>Here&#8217;s the <a href="https://gist.github.com/1208886" title="recipe">recipe</a>, tracked in a gist.</p>
+
+<h3>Liquid</h3>
+
+<ul>
+<li>4 Gallons Tree Top, liquid</li>
+</ul>
+
+
+<h3>Sugars</h3>
+
+<ul>
+<li>1 lb cane sugar dissolved in water</li>
+</ul>
+
+
+<h3>Adjuncts</h3>
+
+<ul>
+<li>2 fl oz Raspberry flavoring</li>
+</ul>
+
+
+<h3>Yeast</h3>
+
+<ul>
+<li>1318 London Ale III (wyeast)</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Git Instaweb With Chrome in Ubuntu]]></title>
+    <link href="http://mrjabba.github.com/blog/2011/08/28/git-instaweb-with-chrome-in-ubuntu/"/>
+    <updated>2011-08-28T15:00:00-05:00</updated>
+    <id>http://mrjabba.github.com/blog/2011/08/28/git-instaweb-with-chrome-in-ubuntu</id>
+    <content type="html"><![CDATA[<p>So you&#8217;ve discovered git <a href="http://manpages.ubuntu.com/manpages/intrepid/man1/git-instaweb.1.html" title="instaweb">instaweb</a>?</p>
+
+<p>But you want to use Chrome? It isn&#8217;t supported. Ruh-roh. No worries. It&#8217;s an easy fix. Open your .gitconfig directory in your user home directory. Add a Chrome section specifying the path to it. Then reference it in the instaweb section.</p>
+
+<div><script src='https://gist.github.com/1177146.js?file='></script>
+<noscript><pre><code>[browser &quot;chrome&quot;]
+  cmd = /usr/bin/google-chrome
+[instaweb]
+  httpd=webrick
+  browser=chrome
+</code></pre></noscript></div>
+
+
+<p>Happy browsing.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[All Your Rebase are Belong to Me]]></title>
+    <link href="http://mrjabba.github.com/blog/2011/08/10/rebase-all/"/>
+    <updated>2011-08-10T19:39:00-05:00</updated>
+    <id>http://mrjabba.github.com/blog/2011/08/10/rebase-all</id>
+    <content type="html"><![CDATA[<p>The more I play with bash functions, the more I realize how much I can automate my typing in Linux. Because we use git svn and clone each svn repo separately at work, it makes it difficult to move from trunk to branch and back again. I&#8217;ve solved directory navigation issues by installing <a href="https://github.com/joelthelion/autojump/wiki" title="autojump">autojump</a>. However, I usually want to rebase all my projects each morning. And, I probably want trunk and the current release branch. This does that for me now.</p>
+
+<div><script src='https://gist.github.com/1138655.js?file='></script>
+<noscript><pre><code>function r-all {
+       cd /branch/foo
+       pwd -P
+       echo &quot;Rebasing branch...&quot;
+       ./rebase.sh;
+       notify-send &quot;Done rebasing branch...&quot;
+
+       cd /trunk/foo
+       echo &quot;Rebasing trunk...&quot;
+       pwd -P
+       ./rebase.sh;
+
+       notify-send &quot;Done rebasing branch and trunk...&quot;
+}    </code></pre></noscript></div>
+
+
+<p><em>notify-send</em> is one of my favorite shell commands. I use this for other things too. For example, I can have it tell me when my build is done. I&#8217;d also like to create one to tail the JBoss log and tell me when JBoss is started. That way I can do other things while JBoss is starting.</p>
+
+<p>I can improve on this. I need to learn how to make my functions more generic (just like my other code). This script assumes 2 symlinks at my root. That&#8217;s fine. But, I should define those as variables. And, I should extract them to separate bash files and include them using the source command rather than just hacking my .bashrc file directly. One step at a time.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Dirty Git Directories]]></title>
+    <link href="http://mrjabba.github.com/blog/2011/08/07/dirty-git-directories/"/>
+    <updated>2011-08-07T03:52:00-05:00</updated>
+    <id>http://mrjabba.github.com/blog/2011/08/07/dirty-git-directories</id>
+    <content type="html"><![CDATA[<p>At my work, I still live in the world of Subversion. Nevertheless, I am able to use git by taking advantage of &#8220;git svn&#8221; which clones existing SVN repo&#8217;s locally. It works great.</p>
+
+<p>Unfortunately, my setup is not optimal. I have a bunch of git repo&#8217;s, one for each SVN project. My future plans involve cloning at a higher level so I can have few git repo&#8217;s. Until I fix that, I find it difficult to determine which repo&#8217;s are &#8220;dirty&#8221;.</p>
+
+<p>Fortunately, I found Matthew McCullough&#8217;s <a href="https://github.com/matthewmccullough/scripts/blob/master/finddirtygit">great script</a> solves this problem for me. For my setup, that just meant saving this script to the root of my project where all my git repo&#8217;s reside. Then make the script executable. Voila!</p>
+
+<script src="https://gist.github.com/1109954.js?file=finddirtygit.sh"></script>
+
+
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Git-y Up]]></title>
+    <link href="http://mrjabba.github.com/blog/2011/08/07/git-y-up/"/>
+    <updated>2011-08-07T02:48:00-05:00</updated>
+    <id>http://mrjabba.github.com/blog/2011/08/07/git-y-up</id>
+    <content type="html"><![CDATA[<p>My first post with Octopress. Impressive.</p>
+]]></content>
+  </entry>
   
 </feed>

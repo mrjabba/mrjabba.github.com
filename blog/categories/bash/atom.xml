@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: bash | Kevin Hutson]]></title>
+  <link href="http://mrjabba.github.com/blog/categories/bash/atom.xml" rel="self"/>
+  <link href="http://mrjabba.github.com/"/>
+  <updated>2012-12-19T17:35:37-06:00</updated>
+  <id>http://mrjabba.github.com/</id>
+  <author>
+    <name><![CDATA[Kevin Hutson]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[All Your Rebase are Belong to Me]]></title>
+    <link href="http://mrjabba.github.com/blog/2011/08/10/rebase-all/"/>
+    <updated>2011-08-10T19:39:00-05:00</updated>
+    <id>http://mrjabba.github.com/blog/2011/08/10/rebase-all</id>
+    <content type="html"><![CDATA[<p>The more I play with bash functions, the more I realize how much I can automate my typing in Linux. Because we use git svn and clone each svn repo separately at work, it makes it difficult to move from trunk to branch and back again. I've solved directory navigation issues by installing <a href="https://github.com/joelthelion/autojump/wiki" title="autojump">autojump</a>. However, I usually want to rebase all my projects each morning. And, I probably want trunk and the current release branch. This does that for me now.</p>
+
+<p><div><script src='https://gist.github.com/1138655.js?file='></script>
+<noscript><pre><code>function r-all {
+       cd /branch/foo
+       pwd -P
+       echo &quot;Rebasing branch...&quot;
+       ./rebase.sh;
+       notify-send &quot;Done rebasing branch...&quot;
+
+       cd /trunk/foo
+       echo &quot;Rebasing trunk...&quot;
+       pwd -P
+       ./rebase.sh;
+
+       notify-send &quot;Done rebasing branch and trunk...&quot;
+}    </code></pre></noscript></div>
+</p>
+
+<p><em>notify-send</em> is one of my favorite shell commands. I use this for other things too. For example, I can have it tell me when my build is done. I'd also like to create one to tail the JBoss log and tell me when JBoss is started. That way I can do other things while JBoss is starting.</p>
+
+<p>I can improve on this. I need to learn how to make my functions more generic (just like my other code). This script assumes 2 symlinks at my root. That's fine. But, I should define those as variables. And, I should extract them to separate bash files and include them using the source command rather than just hacking my .bashrc file directly. One step at a time.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Dirty Git Directories]]></title>
+    <link href="http://mrjabba.github.com/blog/2011/08/07/dirty-git-directories/"/>
+    <updated>2011-08-07T03:52:00-05:00</updated>
+    <id>http://mrjabba.github.com/blog/2011/08/07/dirty-git-directories</id>
+    <content type="html"><![CDATA[<p>At my work, I still live in the world of Subversion. Nevertheless, I am able to use git by taking advantage of "git svn" which clones existing SVN repo's locally. It works great.</p>
+
+<p>Unfortunately, my setup is not optimal. I have a bunch of git repo's, one for each SVN project. My future plans involve cloning at a higher level so I can have few git repo's. Until I fix that, I find it difficult to determine which repo's are "dirty".</p>
+
+<p>Fortunately, I found Matthew McCullough's <a href="https://github.com/matthewmccullough/scripts/blob/master/finddirtygit">great script</a> solves this problem for me. For my setup, that just meant saving this script to the root of my project where all my git repo's reside. Then make the script executable. Voila!</p>
+
+<script src="https://gist.github.com/1109954.js?file=finddirtygit.sh"></script>
+
+
+
+]]></content>
+  </entry>
+  
+</feed>

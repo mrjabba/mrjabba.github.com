@@ -5,14 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Blog Archive - Kevin Hutson</title>
+  <title>Dirty Git Directories - Kevin Hutson</title>
   <meta name="author" content="Kevin Hutson">
 
   
-  <meta name="description" content="Blog Archive 2012 He returns
-Dec 19 2012 2011 ATI and fglrx support in Gnome Shell and Ubuntu
-Dec 12 2011 Rubus Primus
-Sep 24 2011 Git Instaweb With &hellip;">
+  <meta name="description" content="At my work, I still live in the world of Subversion. Nevertheless, I am able to use git by taking advantage of &#8220;git svn&#8221; which clones &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -21,7 +18,7 @@ Sep 24 2011 Git Instaweb With &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://mrjabba.github.com/blog/archives/">
+  <link rel="canonical" href="http://mrjabba.github.com/blog/2011/08/07/dirty-git-directories/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -66,102 +63,95 @@ Sep 24 2011 Git Instaweb With &hellip;">
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Blog Archive</h1>
+    
+      <h1 class="entry-title">Dirty Git Directories</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-08-07T03:52:00-05:00" pubdate data-updated="true">Aug 7<span>th</span>, 2011</time>
+        
+      </p>
     
   </header>
-  
-  <div id="blog-archives">
 
 
+<div class="entry-content"><p>At my work, I still live in the world of Subversion. Nevertheless, I am able to use git by taking advantage of &#8220;git svn&#8221; which clones existing SVN repo&#8217;s locally. It works great.</p>
 
-  
-  <h2>2012</h2>
+<p>Unfortunately, my setup is not optimal. I have a bunch of git repo&#8217;s, one for each SVN project. My future plans involve cloning at a higher level so I can have few git repo&#8217;s. Until I fix that, I find it difficult to determine which repo&#8217;s are &#8220;dirty&#8221;.</p>
 
-<article>
-  
-<h1><a href="/blog/2012/12/19/he-returns/">He returns</a></h1>
-<time datetime="2012-12-19T17:27:00-06:00" pubdate><span class='month'>Dec</span> <span class='day'>19</span> <span class='year'>2012</span></time>
+<p>Fortunately, I found Matthew McCullough&#8217;s <a href="https://github.com/matthewmccullough/scripts/blob/master/finddirtygit">great script</a> solves this problem for me. For my setup, that just meant saving this script to the root of my project where all my git repo&#8217;s reside. Then make the script executable. Voila!</p>
 
-
-</article>
+<script src="https://gist.github.com/1109954.js?file=finddirtygit.sh"></script>
 
 
-
-  
-  <h2>2011</h2>
-
-<article>
-  
-<h1><a href="/blog/2011/12/12/ati/">ATI and fglrx support in Gnome Shell and Ubuntu</a></h1>
-<time datetime="2011-12-12T22:13:00-06:00" pubdate><span class='month'>Dec</span> <span class='day'>12</span> <span class='year'>2011</span></time>
-
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/blog/2011/09/24/rubus-primus/">Rubus Primus</a></h1>
-<time datetime="2011-09-24T14:46:00-05:00" pubdate><span class='month'>Sep</span> <span class='day'>24</span> <span class='year'>2011</span></time>
-
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/blog/2011/08/28/git-instaweb-with-chrome-in-ubuntu/">Git Instaweb With Chrome in Ubuntu</a></h1>
-<time datetime="2011-08-28T15:00:00-05:00" pubdate><span class='month'>Aug</span> <span class='day'>28</span> <span class='year'>2011</span></time>
-
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/blog/2011/08/10/rebase-all/">All Your Rebase are Belong to Me</a></h1>
-<time datetime="2011-08-10T19:39:00-05:00" pubdate><span class='month'>Aug</span> <span class='day'>10</span> <span class='year'>2011</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/bash/'>bash</a></span>
-</footer>
-
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/blog/2011/08/07/dirty-git-directories/">Dirty Git Directories</a></h1>
-<time datetime="2011-08-07T03:52:00-05:00" pubdate><span class='month'>Aug</span> <span class='day'>07</span> <span class='year'>2011</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/bash/'>bash</a>, <a class='category' href='/blog/categories/git/'>git</a></span>
-</footer>
-
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/blog/2011/08/07/git-y-up/">Git-y Up</a></h1>
-<time datetime="2011-08-07T02:48:00-05:00" pubdate><span class='month'>Aug</span> <span class='day'>07</span> <span class='year'>2011</span></time>
-
-
-</article>
 
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">Kevin Hutson</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-08-07T03:52:00-05:00" pubdate data-updated="true">Aug 7<span>th</span>, 2011</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/bash/'>bash</a>, <a class='category' href='/blog/categories/git/'>git</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://mrjabba.github.com/blog/2011/08/07/dirty-git-directories/" data-via="mrjabba" data-counturl="http://mrjabba.github.com/blog/2011/08/07/dirty-git-directories/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2011/08/07/git-y-up/" title="Previous Post: Git-y Up">&laquo; Git-y Up</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2011/08/10/rebase-all/" title="Next Post: All Your Rebase are Belong to Me">All Your Rebase are Belong to Me &raquo;</a>
+      
+    </p>
+  </footer>
 </article>
 
 </div>
