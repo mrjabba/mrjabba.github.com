@@ -1,0 +1,25 @@
+---
+layout: post
+title: "ATI and fglrx support in Gnome Shell and Ubuntu"
+date: 2011-12-12 22:13
+comments: true
+categories: 
+---
+I finally made the big switch to ArchLinux for my laptop. This decision came from great frustration with Ubuntu's last upgrade and specifically, Unity. Arch is perfect for someone like me, someone ready to take the training wheels off of Linux. I've been using Ubuntu since around 2005 when it was still a wee baby.
+
+My workstation at work still has Ubuntu on it. And, worse, it has an ATI graphics card. I was so unhappy with Unity that I decided to install gnome shell and use it as my default shell. Gnome Shell was new to me, but I've been learning its features and feel comfortable with it now. However, I'd been suffering with the top bar displaying a graphics glitch, as well as some funky icon rendering. It corrupted the font display. So I was unable to read the calendar or the words on any applets in the top bar.
+
+After doing some research, I [found](http://ubuntuforums.org/showthread.php?t=1859626) the likely culprit was fglrx which is the proprietary ATI graphics driver. Figures. Apparently it didn't work with Oneiric Ocelot (11.10). The solution was to [remove fglrx completely then install the ATI driver](https://wiki.ubuntu.com/X/Troubleshooting/FglrxInteferesWithRadeonDriver#Problem:__Need_to_fully_remove_-fglrx_and_reinstall_-ati_from_scratch). Seems easy enough.
+
+I did so and rebooted. All of the sudden, I couldn't get a login screen to even display. Nothing. Uh-oh. I walked over to a colleage's desk and verified through ssh that I could login. Phew.
+
+Later, I found that what had happened was that it was actually working fine. But the removing fglrx doesn't do anything to the xorg.conf file I had sitting in /etc/X11. That file was instructing the box to load fglrx as a module and crashing. I discovered my folly through a little lucky browsing. I found an Ubuntu wiki article on the Radeon driver (my card is an ATI Radeon). It states:
+
+*Recommended configuration for X.org. No configuration is necessary for ATI driver in the modern versions of Ubuntu. You can safely take away your xorg.conf and your computer will run fine.*
+[RadeonDriver](https://help.ubuntu.com/community/RadeonDriver, "RadeonDriver") 
+
+Once I renamed/removed xorg.conf and rebooted, I was back in business. And, everything rendered fine now. I was able to use the built-in Gnome display control panel configure my second monitor. Good times. 
+
+Today's lesson: ATI = bad, Unity = bad, RTFM = required.
+
+
