@@ -45,7 +45,7 @@ titlecase: true       # Converts page and post titles to titlecase
 
 # list each of the sidebar modules you want to include, in the order you want them to appear.
 # To add custom asides, create files in /source/_includes/custom/asides/ and add them to the list like 'custom/asides/custom_aside_name.html'
-default_asides: [asides/recent_posts.html, asides/github.html, asides/twitter.html, asides/delicious.html, asides/pinboard.html, asides/googleplus.html]
+default_asides: [asides/recent_posts.html, asides/github.html, asides/twitter.html, asides/delicious.html, asides/pinboard.html, asides/googleplus.html, custom/asides/flickr.html]
 
 # Each layout uses the default asides, but they can have their own asides instead. Simply uncomment the lines below
 # and add an array with the asides you want to use.
@@ -97,3 +97,13 @@ google_analytics_tracking_id:
 
 # Facebook Like
 facebook_like: false
+
+# Flickr Badge
+# see also https://github.com/chronon/Octopress-Flickr-Badge
+flickr_user: 90067774@N00
+flickr_count: 3
+flickr_display: latest
+flickr_size: t
+flickr_source: user
+#flickr_tag:              # tagname - set if flickr_source is set to user_tag or all_tag
+
